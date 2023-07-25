@@ -10,40 +10,37 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap
 
-SRC		=	errors_mng.c init.c main.c mini_algo.c push_swap.c push.c reverse_rotate.c rotate.c swap.c utils.c
+SRCS		=	errors_mng.c init.c main.c mini_algo.c push_swap.c push.c reverse_rotate.c rotate.c swap.c utils.c
 
-OBJ = ${SRC:.c=.o}
+NAME = push_swap
 
-CC = clang
-CFLAGS = -Wall -Werror -Wextra
 
-ARCHIVE = ar -rcs $(NAME) $(OBJ)
+OBJS = ${SRCS:.c=.o}
 
-LIBERATE = rm -rf
 
-LIBFT  = libft.a
-LIBDIR = libft/
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-all: libft $(NAME)
+RM = rm -rf
 
-$(NAME): $(OBJ)
-	cp $(LIBDIR)$(LIBFT) $(NAME)
-	$(ARCHIVE)
-	@echo "\nPrintf Archived\n"
+all: ${NAME} 
+${NAME}: ${OBJS}
+	@${MAKE} -C ./libft
+	@${CC} ${CFLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
 
-clean:
-	$(LIBERATE) $(OBJ)
-	$(LIBERATE) $(LIBDIR)*.o
+${CHECK}: 
+	@${CC} ${CFLAGS}  ./libft/libft.a -o 
+
+clean: 
+	@${MAKE} -C ./libft fclean
+	@${RM} ${OBJS}
+	@${RM} 
 
 fclean: clean
-	$(LIBERATE) $(NAME)
-	$(LIBERATE) $(LIBDIR)$(LIBFT)
+	@${RM} ${NAME}
+	@${RM} 
 
 re: fclean all
 
-libft: 
-	$(MAKE) -C $(LIBDIR)
-
-.PHONY: all libft
+.PHONY: all clean fclean re
