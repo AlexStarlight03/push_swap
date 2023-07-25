@@ -54,7 +54,7 @@ int error_syntax(char *nb)
 {
     if (!(*nb == '-' || *nb == '+' || (*nb >= '0' && *nb <= '9')))
         return (1);
-    if (*nb == '-' || *nb == '+' || (*nb >= '0' && *nb <= '9'))
+    if ((*nb == '-' || *nb == '+') && !(*nb >= '0' && *nb <= '9'))
         return (1);
     while (*++nb)
     {
