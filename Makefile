@@ -6,7 +6,7 @@
 #    By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 10:00:24 by adube             #+#    #+#              #
-#    Updated: 2023/07/24 16:40:58 by alexandrine      ###   ########.fr        #
+#    Updated: 2023/07/25 15:07:35 by alexandrine      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = ${SRCS:.c=.o}
 
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -Wall -Wextra -Werror -Iincludes -g
 
 RM = rm -rf
 

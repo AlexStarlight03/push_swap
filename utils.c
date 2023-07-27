@@ -6,7 +6,7 @@
 /*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 11:33:27 by alexandrine       #+#    #+#             */
-/*   Updated: 2023/07/24 16:32:17 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/07/25 16:27:39 by alexandrine      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 long ft_atol(const char *nptr)
 {
-	size_t				i;
-	int					n;
-	unsigned long int	res;
+	int     i;
+	int     n;
+	long    res;
 
 	i = 0;
 	res = 0;
 	n = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+	if ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
 		i++;
 	if (nptr[i] == 43 || nptr[i] == 45)
 	{
@@ -29,9 +29,9 @@ long ft_atol(const char *nptr)
 			n *= -1;
 		i++;
 	}
-	while (nptr[i] >= 48 && nptr[i] <= 57)
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		res = (res * 10) + (nptr[i] - 48);
+		res = (res * 10) + (nptr[i] - '0');
 		i++;
 	}
 	return (res * n);
