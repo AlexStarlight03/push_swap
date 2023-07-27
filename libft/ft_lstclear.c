@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:21:51 by adube             #+#    #+#             */
-/*   Updated: 2023/07/24 14:59:04 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/07/27 10:31:55 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_pile  **lst, void (*del)(void *))
+void	ft_lstclear(t_pile **lst, void (*del)(void *))
 {
 	t_pile	*temp;
 

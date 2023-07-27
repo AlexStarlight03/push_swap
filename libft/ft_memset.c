@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adube <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:40:49 by adube             #+#    #+#             */
-/*   Updated: 2022/10/26 11:12:40 by adube            ###   ########.fr       */
+/*   Updated: 2023/07/27 10:31:32 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@ void	*ft_memset(void *s, int c, unsigned long n)
 	while (n-- > 0)
 		*(ptr++) = (unsigned char)c;
 	return (s);
-}	
+}

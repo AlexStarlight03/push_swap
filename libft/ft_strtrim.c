@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adube <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:18:00 by adube             #+#    #+#             */
-/*   Updated: 2022/11/28 16:02:43 by adube            ###   ########.fr       */
+/*   Updated: 2023/07/27 10:30:35 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_checkset(char c, char const *set)
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
-{	
+{
 	int		i;
 	int		start;
 	int		end;
@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1[0] == '\0')
 		return (ft_strdup(s1));
 	while (ft_checkset(s1[start], set))
-			start++;
+		start++;
 	end = 0;
 	while (s1[end] != '\0')
 		end++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:09:03 by adube             #+#    #+#             */
-/*   Updated: 2023/07/26 13:16:28 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/07/27 10:29:50 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 typedef struct s_pile
 {
-	int					value;
-    void                *content;
-	int					current_pos;
-	int					final_index;
-	int					move_price;
-	bool				above_median;
-	bool				cheapest;
+	int				value;
+	void			*content;
+	int				current_pos;
+	int				final_index;
+	int				move_price;
+	bool			above_median;
+	bool			cheapest;
 	struct s_pile	*target;
 	struct s_pile	*next;
 	struct s_pile	*prev;

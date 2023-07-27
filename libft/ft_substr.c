@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adube <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:54:07 by adube             #+#    #+#             */
-/*   Updated: 2022/11/25 11:54:15 by adube            ###   ########.fr       */
+/*   Updated: 2023/07/27 10:30:11 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		if (ptr == NULL)
 			return (NULL);
 		return (ptr);
-	}	
+	}
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
 	ptr = ft_calloc(len + 1, sizeof(char));
