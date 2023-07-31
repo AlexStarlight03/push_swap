@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:00:17 by adube             #+#    #+#             */
-/*   Updated: 2023/07/27 10:31:19 by adube            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:05:07 by alexandrine      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,53 +31,53 @@ static int	nb_words(char const *str, char c)
 	return (res);
 }
 
-static char	*ft_new_word(char *str, char separator)
+static char	*ft_new_word(char const *str, int start, int end)
 {
-	static int	cursor = 0;
-	char		*next_str;
-	int			len;
-	int			i;
+	char	*word;
+	int		i;
 
-	len = 0;
 	i = 0;
-	while (str[cursor] == separator)
-		++cursor;
-	while ((str[cursor + len] != separator) && str[cursor + len])
-		++len;
-	next_str = malloc((size_t)len * sizeof(char) + 1);
-	if (NULL == next_str)
+	word = ft_calloc(end - start + 1, sizeof(char));
+	if (word == NULL)
 		return (NULL);
-	while ((str[cursor] != separator) && str[cursor])
-		next_str[i++] = str[cursor++];
-	next_str[i] = '\0';
-	return (next_str);
+	while (start < end)
+		word[i++] = str[start++];
+	return (word);
+}
+
+static char	**ft_free(char **tab, int j)
+{
+	while (j-- > 0)
+		free(tab[j]);
+	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char *s, char c)
 {
-	int		words_number;
-	char	**vector_strings;
-	int		i;
+	int		l;
+	int		start;
+	int		j;
+	char	**tab;
 
-	i = 0;
-	words_number = nb_words(s, c);
-	if (!words_number)
-		exit(1);
-	vector_strings = malloc(sizeof(char *) * (size_t)(words_number + 2));
-	if (NULL == vector_strings)
+	l = 0;
+	j = 0;
+	if (!s)
 		return (NULL);
-	while (words_number-- >= 0)
+	tab = ft_calloc(nb_words(s, c) + 2, sizeof(char *));
+	if (tab == NULL)
+		return (NULL);
+	tab[0] = ft_calloc(1, sizeof(char));
+	while (s[l] != '\0' && nb_words(s, c) != 0 && j < nb_words(s, c))
 	{
-		if (0 == i)
-		{
-			vector_strings[i] = malloc(sizeof(char));
-			if (NULL == vector_strings[i])
-				return (NULL);
-			vector_strings[i++][0] = '\0';
-			continue ;
-		}
-		vector_strings[i++] = ft_new_word(s, c);
+		while (s[l] == c && s[l] != '\0')
+			l++;
+		start = l;
+		while (s[l] != c && s[l] != '\0')
+			l++;
+		tab[++j] = ft_new_word(s, start, l);
+		if (!tab[j])
+			return (ft_free(tab, j));
 	}
-	vector_strings[i] = NULL;
-	return (vector_strings);
+	return (tab);
 }
