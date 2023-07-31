@@ -6,7 +6,7 @@
 /*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:00:17 by adube             #+#    #+#             */
-/*   Updated: 2023/07/31 12:05:07 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/07/31 12:11:27 by alexandrine      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*ft_new_word(char const *str, int start, int end)
 
 static char	**ft_free(char **tab, int j)
 {
-	while (j-- > 0)
+	while (j--)
 		free(tab[j]);
 	free(tab);
 	return (NULL);
