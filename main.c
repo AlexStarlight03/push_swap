@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 16:31:53 by alexandrine       #+#    #+#             */
-/*   Updated: 2023/07/31 11:50:27 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/08/01 09:32:12 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ int	main(int argc, char **argv)
 	pile_b = NULL;
 	if (argc == 1 || (argc == 1 && !argv[1][0]))
 		return (1);
-	else if (argc == 2)	
+	else if (argc == 2)
+	{
 		argv = ft_split(argv[1], 32);
+		if (!argv[1])
+			ft_free(argv, 1);
+	}
 	pile_init(&pile_a, argv + 1, argc == 2);
 	if (!is_sorted(pile_a))
 	{

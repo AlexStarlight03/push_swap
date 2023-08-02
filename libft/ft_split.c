@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrinedube <alexandrinedube@studen    +#+  +:+       +#+        */
+/*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:00:17 by adube             #+#    #+#             */
-/*   Updated: 2023/07/31 12:11:27 by alexandrine      ###   ########.fr       */
+/*   Updated: 2023/08/01 09:47:47 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	*ft_new_word(char const *str, int start, int end)
 	return (word);
 }
 
-static char	**ft_free(char **tab, int j)
+char	**ft_free(char **tab, int j)
 {
 	while (j--)
 		free(tab[j]);

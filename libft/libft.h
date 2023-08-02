@@ -6,7 +6,7 @@
 /*   By: adube <adube@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:09:03 by adube             #+#    #+#             */
-/*   Updated: 2023/07/27 10:29:50 by adube            ###   ########.fr       */
+/*   Updated: 2023/08/01 09:39:06 by adube            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ t_pile			*ft_lstmap(t_pile *lst, void *(*f)(void *),
 					void (*del)(void *));
 t_pile			*ft_lstnew(void *content);
 int				ft_lstsize(t_pile *lst);
+char			**ft_free(char **tab, int j);
 
 #endif
